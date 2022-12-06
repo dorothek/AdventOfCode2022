@@ -1,5 +1,4 @@
-
-biggest=0
+elf_sum=[]
 sum=0
 
 with open('input.txt') as f:
@@ -9,15 +8,16 @@ with open('input.txt') as f:
             break
         print(line)
         if line=="\n":
-            if sum>biggest:
-                biggest=sum
+            elf_sum.append(sum)
             sum=0
-        #print("hahaha")
         else:
             line = int(line)
             sum = sum + line
 
-    print("Answer below")
-    print(biggest)
+    print("result 1", max(elf_sum))
+    elf_sum.sort(reverse=True)
+    print("result 2", elf_sum[0]+elf_sum[1]+elf_sum[2])
+
+
 
 
